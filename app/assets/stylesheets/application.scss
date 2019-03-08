@@ -1,0 +1,32 @@
+/*
+*= require_tree .
+*= require_self
+*
+*/
+
+// @import "*";
+@import "bootstrap";
+@import "tether";
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  font-family: fantasy;
+  font-weight: bold;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #353a3f;
+  font-style: normal;
+  font-family: fantasy;
+  color: white;
+}

@@ -3,6 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+# This is the bootstrap Gem, some of these gems are dependent
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+gem 'simple_form'
+gem 'popper_js'
+gem 'tether-rails'
+
+# end of boostrap required gems
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use Puma as the app server
