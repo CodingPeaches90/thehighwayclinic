@@ -12,6 +12,9 @@ gem 'tether-rails'
 
 # end of boostrap required gems
 
+# Devise Gem
+gem 'devise'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use Puma as the app server

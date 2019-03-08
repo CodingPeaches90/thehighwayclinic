@@ -3,8 +3,5 @@ class ApplicationController < ActionController::Base
     #     render html: "hello, world!"
     # end
     # layout 'application'
-
-    def index
-        render html: "hello", layout: true
-    end
+    before_action :authenticate_user!
 end
