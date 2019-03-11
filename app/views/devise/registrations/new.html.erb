@@ -22,9 +22,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: "btn btn-secondary btn-lg" %>
   </div>
 <% end %>
-<%= render "devise/shared/links" %>
+<div class="row">
+    <div class="col-sm-8"><%= render "partials/sign_up_links" %></div>
+</div>
 </div>
 <hr class="colorgraph">
