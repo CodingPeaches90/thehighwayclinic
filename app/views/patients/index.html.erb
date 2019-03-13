@@ -5,19 +5,21 @@
 <div class="container">
 
 
-<h1>My Patients</h1>
+<h1>My Patients</h1><br>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
-      <th>Full name</th>
-      <th>Age</th>
-      <th>Sex</th>
-      <th>Address</th>
-      <th>Pps</th>
-      <th>Medical card</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th scope="col">Full name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Sex</th>
+      <th scope="col">Address</th>
+      <th scope="col">Pps</th>
+      <th scope="col">Medical card</th>
+      <th scope="col">Dentist</th>
+      <th scope="col">Show</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
 
@@ -30,7 +32,7 @@
         <td><%= patient.Address %></td>
         <td><%= patient.PPS %></td>
         <td><%= patient.Medical_Card %></td>
-        <td><%= patient.user %></td>
+        <td><%= patient.user.email.split('@')[0] %></td>
         <td><%= link_to 'Show', patient %></td>
         <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
         <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
