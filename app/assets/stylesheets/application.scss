@@ -28,7 +28,7 @@ footer {
   height: 60px;
   background-color: #353a3f;
   font-style: normal;
-  font-family: fantasy;
+  font-family: monaco;
   color: white;
 }
 
@@ -47,4 +47,10 @@ footer {
     margin-top: 3em;
     margin-left: 7em;
     margin-right: 7em;
+}
+.landing-page-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }

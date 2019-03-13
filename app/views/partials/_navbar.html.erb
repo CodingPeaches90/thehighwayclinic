@@ -21,9 +21,13 @@
           </li>
 
         </ul>
+        <h7 style="color: white; margin-right: 20px;"> Welcome! <%= current_user.email.split('@')[0] %> </h7>
+
+
         <form class="form-inline mt-2 mt-md-0">
           <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+          <br>
           <br>
           <%= link_to('Log out', destroy_user_session_path, :method => :delete, :class => "btn btn-outline-info") %>
         </form>
