@@ -1,3 +1,5 @@
+require 'report'
+
 class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
@@ -5,7 +7,19 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = current_user.patients.all
+    # If search param has a name
+    if params[:Full_Name]
+        # Query if theres a record like the one specified AND user_id == current_user within devise helper
+        @patients = Patient.where("Full_Name LIKE :name AND user_id = :id", {:name => "%#{params[:Full_Name]}%", :id => current_user.id})
+        # another if to check if the patients instance has a size zero meaning no results
+        if @patients.size == 0
+            # if this condition is true then return all patients of that user!
+            @patients = current_user.patients.all
+        end
+    else
+        # If no search param (example, on page load) is provided then return all patients belong to current_user
+        @patients = current_user.patients.all
+    end
   end
 
   # GET /patients/1
@@ -27,6 +41,9 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new(patient_params)
     @patient.user = current_user
+
+    # invoke our gem
+    Excel_maker.writes(@patient)
 
     respond_to do |format|
       if @patient.save

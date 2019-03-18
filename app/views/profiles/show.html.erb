@@ -1,0 +1,43 @@
+<%= render 'partials/navbar' %>
+
+<%= flash_messages %>
+
+<br/><br/>
+<div class="container ">
+    <div class="jumbotron ">
+        <div class="row">
+            <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png" alt="stack photo" class="img">
+            </div>
+            <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                <div class="container" style="border-bottom:1px solid black">
+                    <h2 style="text-align:center;">
+                        Dr <%= @profile.firstname %> <%= @profile.lastname %>
+                    </h2>
+                </div>
+                <hr>
+
+                <ul class="container details">
+                    <!--  email address -->
+                    <li><p ><span class="fas fa-envelope " style="width:50px;" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></span><%= current_user.email %></p></li>
+                    <!-- Address -->
+                    <li><p><span class="fas fa-map-marker-alt" style="width:50px;"></span>Address : <%= @profile.address %></p></li>
+                    <!-- PPS Number -->
+                    <li><p><span class="far fa-id-card" style="width:50px;" title="Tools" ></span>PPS Number : <%= @profile.pps_number %></p></li>
+                    <!-- Dental License id -->
+                    <li><p><span class="far fa-id-badge" style="width:50px;"></span>Dental License : <%= @profile.dental_license%></p></li>
+                    <!-- Number of Patients -->
+                    <li><p><span class="fas fa-users" style="width:50px;"></span>Number of Patients : <%= counter_patients %></p></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <%= link_to 'Back', root_path, class: "btn btn-secondary btn-m" %>   |
+        <%= link_to 'Edit Profile', edit_profile_path(@profile), class: "btn btn-secondary btn-m" %> |
+        <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-m" %>
+    </div>
+</div>
+
+<%= render 'partials/footer' %>

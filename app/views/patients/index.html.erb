@@ -1,11 +1,32 @@
 <%= render 'partials/navbar' %>
 
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+
 <div class="jumbotron jumbotron-fluid">
 <div class="container">
 
+<h1 style="text-align: center;">My Patients</h1>
 
-<h1>My Patients</h1><br>
+<div id="top-container">
+    <!-- adding patient to database -->
+    <div id="patient_add" style="float: right"><%= link_to 'New Patient', new_patient_path, class: "btn btn-success btn-m" %></div>
+    <!-- Search bar for searching patients -->
+    <div id="search_bar" style="float: left">
+        <!-- Search bar -->
+        <%= form_tag(patients_path, :method => "get") do %>
+            <div class="input-group add-on">
+              <%= text_field_tag :Full_Name, params[:Full_Name], class: 'form-control' %>
+                <div class="input-group-btn">
+                    <%= button_tag 'Search', name: nil, class: 'btn btn-default' do %>
+                        <i class="fas fa-search"></i>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+<br>
+<br>
 
 <table class="table">
   <thead class="thead-dark">
@@ -14,7 +35,7 @@
       <th scope="col">Age</th>
       <th scope="col">Sex</th>
       <th scope="col">Address</th>
-      <th scope="col">Pps</th>
+      <th scope="col">PPS</th>
       <th scope="col">Medical card</th>
       <th scope="col">Dentist</th>
       <th scope="col">Show</th>
@@ -43,7 +64,6 @@
 
 <br>
 
-<%= link_to 'New Patient', new_patient_path %>
 </div>
 </div>
 

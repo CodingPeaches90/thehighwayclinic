@@ -17,4 +17,12 @@
 //= require bootstrap
 //= require activestorage
 //= require turbolinks
+//= require toastr
 //= require_tree .
+
+
+toastr.options = {
+    "positionClass": "toast-top-right"
+    "showMethod": "slideDown",
+    "hideMethod": "slideUp"
+}

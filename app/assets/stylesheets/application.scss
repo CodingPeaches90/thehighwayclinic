@@ -7,6 +7,7 @@
 // @import "*";
 @import "bootstrap";
 @import "tether";
+@import "toastr";
 
 
 html {
@@ -19,6 +20,7 @@ body {
   font-family: monaco;
   font-weight: bold;
   background-color: #353a3f;
+  padding-top: 65px;
 }
 footer {
   position: absolute;
@@ -54,3 +56,7 @@ footer {
     margin-right: auto;
     width: 50%;
 }
+
+.details li {
+     list-style: none;
+ }

@@ -15,6 +15,16 @@ gem 'tether-rails'
 # Devise Gem
 gem 'devise'
 
+# excel gem (standard)
+gem 'axlsx_rails'
+
+# pdf gem
+gem 'prawn'
+
+# Toaster notifications gem
+gem 'toastr-rails'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use Puma as the app server
