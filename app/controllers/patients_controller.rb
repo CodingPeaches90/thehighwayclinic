@@ -10,7 +10,7 @@ class PatientsController < ApplicationController
     # If search param has a name
     if params[:Full_Name]
         # Query if theres a record like the one specified AND user_id == current_user within devise helper
-        @patients = Patient.where("patients.Full_Name LIKE :name AND user_id = :id", {:name => "%#{params[:Full_Name]}%", :id => current_user.id})
+        @patients = Patient.where("full_name LIKE :name AND user_id = :id", {:name => "%#{params[:Full_Name]}%", :id => current_user.id})
         # another if to check if the patients instance has a size zero meaning no results
         if @patients.size == 0
             # if this condition is true then return all patients of that user!
