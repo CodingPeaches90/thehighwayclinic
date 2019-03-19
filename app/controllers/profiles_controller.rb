@@ -14,11 +14,17 @@ class ProfilesController < ApplicationController
   end
 
   helper_method :counter_patients
+  helper_method :redirection_profile
 
 
   def counter_patients
       puts "Tiggered"
       patient_user_counter = Patient.where(user_id: current_user).select(:user_id).count
+  end
+
+  def redirection_profile
+      @idProfile = Profile.where(user_id: current_user).select(:id)
+      redirect_to "/profiles/#{@idProfile}"
   end
 
   # GET /profiles
