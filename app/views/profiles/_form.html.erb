@@ -9,10 +9,15 @@
     <%= f.input :address %>
     <%= f.input :pps_number %>
     <%= f.input :dental_license %>
-    <%= f.association :user %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+      <div style="display: flex; float: left;">
+          <%= link_to 'Back', @profile, class: "btn btn-dark btn-m" %>
+      </div>
+      <div style="display: flex; float: right;">
+          <%= f.button :submit , class: "btn btn-success btn-m" %>
+      </div>
   </div>
+
 <% end %>

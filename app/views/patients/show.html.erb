@@ -1,39 +1,47 @@
-<p id="notice"><%= notice %></p>
+<%= render 'partials/navbar' %>
 
-<p>
-  <strong>Full name:</strong>
-  <%= @patient.Full_Name %>
-</p>
+<br/><br/>
+<div class="container ">
+    <div class="jumbotron ">
+        <div class="row">
+            <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                <%= image_tag ("drip-patient-pictogram.svg"), class: "patient-view"%>
 
-<p>
-  <strong>Age:</strong>
-  <%= @patient.Age %>
-</p>
+            </div>
+            <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                <div class="container">
+                    <h2 style="text-align:center;">
+                        <%= @patient.Full_Name %>
+                    </h2>
+                </div>
+                <hr class="colorgraph">
 
-<p>
-  <strong>Sex:</strong>
-  <%= @patient.Sex %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @patient.Address %>
-</p>
-
-<p>
-  <strong>Pps:</strong>
-  <%= @patient.PPS %>
-</p>
-
-<p>
-  <strong>Medical card:</strong>
-  <%= @patient.Medical_Card %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @patient.user %>
-</p>
-
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+                <ul class="container details">
+                    <!--  Patient's age -->
+                    <li><p>Age : <%= @patient.Age %></p></li>
+                    <!-- Patient's address -->
+                    <li><p>Address : <%= @patient.Address %></p></li>
+                    <!-- Patient's sex -->
+                    <li><p>PPS Number : <%= @patient.Sex %></p></li>
+                    <!-- Patient's address -->
+                    <li><p>Dental License : <%= @patient.Address %></p></li>
+                    <!-- Patient's pps -->
+                    <li><p>PPS Number :  <%= @patient.PPS %></p></li>
+                    <!-- Patient's medical card status -->
+                    <% if @patient.Medical_Card.to_str.include? "YES" %>
+                        <li><p style = "color: green;">Medical Card Status : <%= @patient.Medical_Card %></p></li>
+                    <% elsif @patient.Medical_Card.to_str.include? "NO"%>
+                        <li><p style = "color: red;">Medical Card Status : <%= @patient.Medical_Card %></p></li>
+                    <% else %>
+                        <li><p>Medical Card Status : <%= @patient.Medical_Card %></p></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <%= link_to 'Back', patients_path , class: "btn btn-dark btn-m"%> |
+        <%= link_to 'Edit', edit_patient_path(@patient), class: "btn btn-warning btn-m" %>
+    </div>
+</div>
+<%= render 'partials/footer' %>

@@ -24,6 +24,9 @@ gem 'prawn'
 # Toaster notifications gem
 gem 'toastr-rails'
 
+# my own gem
+# gem 'report', '~> 0.0.0'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'

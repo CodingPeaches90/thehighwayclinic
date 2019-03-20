@@ -52,7 +52,15 @@
         <td><%= patient.Sex %></td>
         <td><%= patient.Address %></td>
         <td><%= patient.PPS %></td>
-        <td><%= patient.Medical_Card %></td>
+
+        <% if patient.Medical_Card.to_str.include? "YES" %>
+            <td bgcolor="#00FF00"><p style = "color: green; text-align: center"><%= patient.Medical_Card %></p></td>
+        <% elsif patient.Medical_Card.to_str.include? "NO"%>
+            <td bgcolor="#FF0000"><p style = "color: white; text-align: center"><%= patient.Medical_Card %></p></td>
+        <% else %>
+            <td><p><%= patient.Medical_Card %></p></td>
+        <% end %>
+
         <td><%= patient.user.email.split('@')[0] %></td>
         <td><%= link_to 'Show', patient %></td>
         <td><%= link_to 'Edit', edit_patient_path(patient) %></td>

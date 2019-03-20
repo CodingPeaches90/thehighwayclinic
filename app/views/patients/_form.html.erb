@@ -13,6 +13,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+      <div style="display: flex; float: left;">
+          <%= link_to 'Back', patients_url, class: "btn btn-dark btn-m" %>
+      </div>
+      <div style="display: flex; float: right;">
+          <%= f.button :submit , class: "btn btn-success btn-m" %>
+      </div>
   </div>
 <% end %>
