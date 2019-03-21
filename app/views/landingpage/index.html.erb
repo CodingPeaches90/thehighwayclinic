@@ -1,15 +1,37 @@
 
 <%= render 'partials/navbar' %>
 
-
 <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-      <br>
-    <h1 class="display-4"><center>Welcome to the portal<center></h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-    <p class ="lead"> In this application you can manage your patients, manage your patients records and also </p>
-    <p class="lead"> manage your appointments with your patients. You can also manage your profile. </p>
-    <%= image_tag ("dentist.jpg"), class: "landing-page-image"%>
+    <div id="outercard">
+        <div class="card" style="width: 90%; display:block; margin:auto; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <div class="image-placeholder-left">
+                <%= image_tag ("landing.jpg"), class:"im"%>
+            </div>
+
+            <div class ="text-placeholder-right">
+              <div class="">
+                  <div class = "text-region" style="padding-left: 17px; padding-right: 17px;">
+                      <h3> Welcome back Dr <%= current_user.profile.firstname %>!</h3>
+                      <h6>You recently added the patient <%= get_last_record %></h6>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  <div class = "bottom_container" style="margin-top: 5em; display:flex; flex-direction: row; justify-content: center; align-items: center">
+      <!-- <a class="twitter-timeline" data-width="370" data-height="290" data-theme="dark" href="https://twitter.com/CEDentists">National Park Tweets - Curated tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+      <% @tweets.each do |tweet| %>
+          <div class="card" style="width: 24rem; height: 20em; margin-right: 4em; margin-left: 4em; border-radius: 15px 50px 30px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+           <div class="card-body">
+             <h5 class="card-title"><%= image_tag ("twitter.png"), class: 'twt-icon'%> </h5>
+             <h6 class="card-subtitle mb-2 text-muted">@<%= @glob_username %></h6>
+             <p class="card-text" style="font-size: 14px; text-muted "><i>" <%= tweet.text %> "</i></p>
+           </div>
+           <div class ="time-tweet" style ="float: right; align-text: right; border-top: 2px solid #38A1F3; ">
+               <h7 class ="date-tag" style="font-size: 12px; padding-top: 1em;"><%= tweet.created_at.strftime("%B #{tweet.created_at.day.ordinalize}, %Y") %></h7>
+           </div>
+         </div>
+     <% end %>
   </div>
 </div>
 

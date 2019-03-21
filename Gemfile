@@ -26,7 +26,11 @@ gem 'toastr-rails'
 
 # my own gem
 # gem 'report', '~> 0.0.0'
+# Twitter gem
+gem 'twitter'
 
+# Environment Variables Gem
+gem 'dotenv-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'

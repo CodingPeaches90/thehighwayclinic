@@ -50,13 +50,26 @@ footer {
     margin-left: 7em;
     margin-right: 7em;
 }
-.landing-page-image{
+.im{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height:100%;
+}
+
+// testing image on page
+.image-landing {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
 }
 
 .details li {
      list-style: none;
+ }
+
+ .outercard {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
  }

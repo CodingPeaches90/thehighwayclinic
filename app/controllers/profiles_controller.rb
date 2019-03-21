@@ -19,7 +19,7 @@ class ProfilesController < ApplicationController
 
   def counter_patients
       puts "Tiggered"
-      patient_user_counter = Patient.where(user_id: current_user).select(:user_id).count
+      @patient_user_counter = Patient.where(user_id: current_user).select(:user_id).count
   end
 
   def redirection_profile
@@ -43,7 +43,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
       @profile = Profile.new
-      @profile.user_id = current_user.id
+      puts current_user.id
+
       respond_to do |format|
           format.html #new.html.erb
           format.json {
@@ -61,6 +62,7 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
+    @profile.user_id = current_user.id
 
     respond_to do |format|
       if @profile.save

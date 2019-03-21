@@ -1,3 +1,39 @@
 // Place all the styles related to the landingpage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.twt-icon {
+    height: 70px;
+    width: 70px;
+}
+
+@override
+h5 {
+    text-align: center !important;
+}
+
+.date-tag{
+    float: right;
+    align-text: right;
+    float: right;
+    align-content: flex-end;
+    align-items: center;
+    text-align: end;
+    padding-left: 2px;
+    padding-right: 7px;
+    padding-bottom: 20px;
+}
+.outercard {
+    text-align:center;
+}
+
+.image-placeholder-left {
+    width: 50%;
+    display: inline-block;
+    height:100%;
+
+}
+.text-placeholder-right {
+    width: 48%;
+    display: inline-block;
+}
