@@ -14,7 +14,7 @@
                       <h3> Welcome back Dr <%= current_user.profile.firstname %>!</h3>
                       <!-- We add a conditional here to check if there is any records in the database to prevent an error for the new user -->
                       <% if is_patients_exists? %>
-                        <h6>You recently added the patient:  <b><%= last_record %></b>, you can view their profile here : <%= link_to 'view', patient_path(last_record_id) %></h6>
+                        <h6>You recently added the patient:  <b><i><%= last_record %></i></b>, you can view their profile here : <%= link_to 'view', patient_path(last_record_id) %></h6>
                       <% else %>
                         <h6> You have no patients, you can add a patient here : <%= link_to 'Add', new_patient_path, class:"btn btn-dark btn-m" %> </h6>
                       <% end %>
