@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_18_132050) do
+ActiveRecord::Schema.define(version: 2019_03_23_161910) do
 
   create_table "patients", force: :cascade do |t|
     t.string "Full_Name"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_03_18_132050) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

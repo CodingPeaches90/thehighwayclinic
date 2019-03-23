@@ -18,6 +18,12 @@
           <li class="nav-item active">
             <a class="nav-link" href="#">My Appointments</a>
           </li>
+          <!-- This section is only for the Administrator -->
+          <% if current_user.admin? %>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Analytics</a>
+              </li>
+          <% end %>
         </ul>
         <h7 style="color: white; margin-right: 20px;"> Welcome! <%= current_user.email %> </h7>
 

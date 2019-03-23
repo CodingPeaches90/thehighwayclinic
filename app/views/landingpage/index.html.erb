@@ -18,6 +18,11 @@
                       <% else %>
                         <h6> You have no patients, you can add a patient here : <%= link_to 'Add', new_patient_path, class:"btn btn-dark btn-m" %> </h6>
                       <% end %>
+                      <!-- Administrator can download all pdf's in the reports folder! -->
+                      <% if current_user.admin? %>
+                        <h6> You are an Admin, you can download all patient reports! </h6>
+                      <% end %>
+
                   </div>
               </div>
             </div>
