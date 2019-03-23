@@ -6,7 +6,7 @@ require 'prawn'
 # a patient object and writes to a JSON file. The JSON file can then be used
 # by the admin of the application so he/she can view analytics for the application
 
-class Excel_maker
+class Report_Logging_JM
 
     include Singleton
 
@@ -35,7 +35,7 @@ class Excel_maker
         patient_medical_card_status = patient.Medical_Card
 
         # Generate PDF with the Patient's Name appended to the PDF name
-        Prawn::Document.generate("#{PATH}#{patient_name} File.pdf", :margin => 100) do
+        Prawn::Document.generate("#{PATH}#{patient_name}.pdf", :margin => 100) do
 
             # Put Main Logo on Front
             image Rails.root.to_s + '/app/assets/images/logo.png', :width => 500, :height => 500, :position => :center

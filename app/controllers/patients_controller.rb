@@ -43,7 +43,7 @@ class PatientsController < ApplicationController
     @patient.user = current_user
 
     # invoke our gem
-    Excel_maker.writes(@patient)
+    Report_Logging_JM.writes(@patient)
 
     respond_to do |format|
       if @patient.save
