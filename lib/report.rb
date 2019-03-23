@@ -85,7 +85,7 @@ class Report_Logging_JM
                 text "Patient's PPS Number : "
             end
             grid([4,2], [4,3]).bounding_box do
-                text "Patient Full Name : "
+                text patient_pps
             end
 
             # Define Medical Card Status
