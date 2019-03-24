@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'analyticspage/analytics'
   resources :appointments
   resources :profiles
   resources :patients

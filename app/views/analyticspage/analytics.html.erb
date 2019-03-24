@@ -1,0 +1,20 @@
+<%= render 'partials/navbar' %>
+<br>
+<h1 style="text-align: center; color: white;">Dashboard</h1>
+<br>
+<div id="outercard">
+    <div class="card" style="width: 90%; display:block; margin:auto; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <div class="image-placeholder-left">
+            <%= pie_chart({"Males" => @males, "Females" => @females}, title: "Males vs Female Patients", colors: ["#b00", "#666"]) %>
+        </div>
+        <div class ="text-placeholder-right">
+          <div class="">
+              <div class = "text-region" style="padding-left: 17px; padding-right: 17px;">
+                  <!-- We add a conditional here to check if there is any records in the database to prevent an error for the new user -->
+                  <%= pie_chart({"Yes" => @yes_medical_card, "No" => @no_medical_card}, title: "Medical Card Holders", colors: ["#b00", "#666"]) %>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+<%= render 'partials/footer' %>

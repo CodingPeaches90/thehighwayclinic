@@ -21,7 +21,7 @@
           <!-- This section is only for the Administrator -->
           <% if current_user.admin? %>
               <li class="nav-item active">
-                <a class="nav-link" href="#">Analytics</a>
+                <%= link_to("Analytics", analyticspage_analytics_path, :class => "nav-link") %>
               </li>
           <% end %>
         </ul>
