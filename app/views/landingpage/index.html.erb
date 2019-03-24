@@ -20,9 +20,8 @@
                       <% end %>
                       <!-- Administrator can download all pdf's in the reports folder! -->
                       <% if current_user.admin? %>
-                        <h6> You are an Admin, you can download all patient reports! </h6>
+                        <h6> You are an Admin, you can see some analytics here : </h6>
                       <% end %>
-
                   </div>
               </div>
             </div>
@@ -34,7 +33,7 @@
           <div class="card" style="width: 24rem; height: 20em; margin-right: 4em; margin-left: 4em; border-radius: 15px 50px 30px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
            <div class="card-body">
              <h5 class="card-title"><%= image_tag ("twitter.png"), class: 'twt-icon'%> </h5>
-             <h6 class="card-subtitle mb-2 text-muted">@<%= @glob_username %></h6>
+             <h6 id = "twitter-uname" class="card-subtitle mb-2 text-muted">@<%= @glob_username %></h6>
              <p class="card-text" style="font-size: 14px; text-muted "><i>" <%= tweet.text %> "</i></p>
            </div>
            <div class ="time-tweet" style ="float: right; align-text: right; border-top: 2px solid #38A1F3; ">

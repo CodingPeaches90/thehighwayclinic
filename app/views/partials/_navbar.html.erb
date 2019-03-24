@@ -16,7 +16,7 @@
             <%= link_to("My Patients", patients_path , :class => "nav-link")%>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">My Appointments</a>
+            <%= link_to("My Appointments", appointments_path, :class => "nav-link") %>
           </li>
           <!-- This section is only for the Administrator -->
           <% if current_user.admin? %>
@@ -25,9 +25,10 @@
               </li>
           <% end %>
         </ul>
-        <h7 style="color: white; margin-right: 20px;"> Welcome! <%= current_user.email %> </h7>
+        <h7 id = "nav-bar-current-user-email" style="color: white; margin-right: 20px;"> Welcome! <%= current_user.email %> </h7>
 
         <form class="form-inline mt-2 mt-md-0">
+
           <br>
           <br>
           <%= link_to('Log out', destroy_user_session_path, :method => :delete, :class => "btn btn-outline-info") %>

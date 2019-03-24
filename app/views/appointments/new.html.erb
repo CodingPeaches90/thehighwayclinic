@@ -1,0 +1,24 @@
+<%= render 'partials/navbar' %>
+
+<br>
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container" >
+                    <h2 style="text-align:center;">
+                        Make an Appointment
+                    </h2>
+                </div>
+                <hr class="colorgraph">
+                <ul class="container details">
+                    <%= render 'form', appointment: @appointment %>
+                </ul>
+            </div>
+        </div>
+        <hr class="colorgraph">
+    </div>
+</div>
+<br><br>
+
+<%= render 'partials/footer' %>

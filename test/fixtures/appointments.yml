@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  notes: MyText
+  date: 2019-03-23 23:12:50
+  user: one
+  patient: one
+
+two:
+  notes: MyText
+  date: 2019-03-23 23:12:50
+  user: two
+  patient: two

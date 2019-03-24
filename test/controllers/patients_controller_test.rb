@@ -1,14 +1,19 @@
 require 'test_helper'
 
 class PatientsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @patient = patients(:one)
+    @user = users(:three)
+    sign_in @user
   end
 
   test "should get index" do
     get patients_url
     assert_response :success
   end
+
 
   test "should get new" do
     get new_patient_url
@@ -44,5 +49,6 @@ class PatientsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to patients_url
+    sign_out @user
   end
 end

@@ -15,3 +15,11 @@ two:
   pps_number: MyString
   dental_license: 1
   user: two
+
+three:
+  firstname: MyString
+  lastname: MyString
+  address: MyString
+  pps_number: MyString
+  dental_license: 1
+  user: three

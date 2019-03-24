@@ -1,22 +1,14 @@
 require 'test_helper'
 
 class ProfilesControllerTest < ActionDispatch::IntegrationTest
-
+  include Devise::Test::IntegrationHelpers
 
   setup do
+    @user = users(:one)
+    sign_in @user
     @profile = profiles(:one)
   end
-
-  test "should get index" do
-    get profiles_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    get new_profile_url
-    assert_response :success
-  end
-
+  # When the user is logged in we want to map a profile to that user
   test "should create profile" do
     assert_difference('Profile.count') do
       post profiles_url, params: { profile: { address: @profile.address, dental_license: @profile.dental_license, firstname: @profile.firstname, lastname: @profile.lastname, pps_number: @profile.pps_number, user_id: @profile.user_id } }
@@ -40,11 +32,14 @@ class ProfilesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to profile_url(@profile)
   end
 
-  test "should destroy profile" do
+  test "should destroy profile, sign out, try direct to root" do
     assert_difference('Profile.count', -1) do
       delete profile_url(@profile)
     end
 
     assert_redirected_to profiles_url
+    sign_out @user
+    get root_path
+    assert_redirected_to new_user_session_path
   end
 end

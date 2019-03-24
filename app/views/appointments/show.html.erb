@@ -1,0 +1,40 @@
+<%= render 'partials/navbar' %>
+
+<br/><br/>
+<div class="container ">
+    <div class="jumbotron ">
+        <div class="row">
+            <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                <%= image_tag ("calendar-icon.svg"), class: "patient-view"%>
+            </div>
+                <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                    <div class="container">
+                        <h2 style="text-align:center;">
+                            Appointment for :
+                        </h2>
+                    </div>
+                    <hr class="colorgraph">
+
+                    <ul class="container details">
+                        <!-- Appointment Date -->
+                        <li><p>Date : <%= @appointment.date %></p></li>
+                        <!--  Appointment Description -->
+                        <li><textarea readonly>Notes : <%= @appointment.notes %></textarea></li>
+                        <!-- Appointment Dentist -->
+                        <li><p>Dentist : <%= @appointment.user %></p></li>
+                        <!-- Appointment Patient -->
+                        <li><p>Patient : <%= @appointment.patient %></p></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center;">
+            <%= link_to 'Back', appointments_path, class: "btn btn-dark btn-m" %> |
+            <%= link_to 'Edit', edit_appointment_path(@appointment), class: "btn btn-warning btn-m" %>
+        </div>
+</div>
+
+<%= render 'partials/footer' %>
+
+<p id="notice"><%= notice %></p>

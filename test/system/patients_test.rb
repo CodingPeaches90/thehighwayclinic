@@ -1,7 +1,9 @@
 require "application_system_test_case"
 
 class PatientsTest < ApplicationSystemTestCase
+
   setup do
+    @user = users(:three)
     @patient = patients(:one)
   end
 
