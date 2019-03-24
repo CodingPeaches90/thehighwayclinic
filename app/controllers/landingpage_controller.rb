@@ -6,6 +6,7 @@ class LandingpageController < ApplicationController
       username = 'IrishDentists'
       @glob_username = username
       options = {:count => 3, :include_rts => true}
+
       @tweets = $client.user_timeline(username, options)
 
       @last_record_patient = Patient.where

@@ -4,7 +4,8 @@ class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.json
   def index
-    @appointments = Appointment.all
+    # Return all Appointments for the Current user only
+    @appointments = current_user.appointments.all
   end
 
   # GET /appointments/1
@@ -25,6 +26,8 @@ class AppointmentsController < ApplicationController
   # POST /appointments.json
   def create
     @appointment = Appointment.new(appointment_params)
+    # After creating the object, before we respond set the dentist ID to the foreign key
+    @appointment.user = current_user
 
     respond_to do |format|
       if @appointment.save
@@ -69,6 +72,6 @@ class AppointmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
-      params.require(:appointment).permit(:notes, :date, :user_id, :patient_id)
+      params.require(:appointment).permit(:notes, :date, :patient_id)
     end
 end

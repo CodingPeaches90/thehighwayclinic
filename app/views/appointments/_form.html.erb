@@ -6,8 +6,7 @@
   <div class="form-inputs">
     <%= f.input :notes %>
     <%= f.input :date %>
-    <%= f.association :user %>
-    <%= f.association :patient %>
+    <%= f.association :patient, label_method: :Full_Name %>
   </div>
 
   <div class="form-actions">

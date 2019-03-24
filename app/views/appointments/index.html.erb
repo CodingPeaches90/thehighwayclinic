@@ -11,7 +11,6 @@
     <tr>
       <th scope="col">Notes</th>
       <th scope="col">Date</th>
-      <th scope="col">User</th>
       <th scope="col">Patient</th>
       <th scope="col">Show</th>
       <th scope="col">Edit</th>
@@ -24,8 +23,7 @@
       <tr>
         <td><%= appointment.notes %></td>
         <td><%= appointment.date %></td>
-        <td><%= appointment.user %></td>
-        <td><%= appointment.patient %></td>
+        <td><%= appointment.patient.Full_Name %></td>
         <td><%= link_to 'Show', appointment %></td>
         <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
         <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>

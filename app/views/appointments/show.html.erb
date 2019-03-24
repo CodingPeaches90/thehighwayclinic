@@ -10,20 +10,20 @@
                 <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
                     <div class="container">
                         <h2 style="text-align:center;">
-                            Appointment for :
+                            Appointment for : <%= @appointment.patient.Full_Name %>
                         </h2>
                     </div>
                     <hr class="colorgraph">
 
                     <ul class="container details">
-                        <!-- Appointment Date -->
-                        <li><p>Date : <%= @appointment.date %></p></li>
                         <!--  Appointment Description -->
                         <li><textarea readonly>Notes : <%= @appointment.notes %></textarea></li>
+                        <!-- Appointment Date -->
+                        <li><p>Date : <%= @appointment.date %></p></li>
                         <!-- Appointment Dentist -->
-                        <li><p>Dentist : <%= @appointment.user %></p></li>
+                        <li><p>Dentist : Dr <%= @appointment.user.profile.firstname %> <%= @appointment.user.profile.lastname%></p></li>
                         <!-- Appointment Patient -->
-                        <li><p>Patient : <%= @appointment.patient %></p></li>
+                        <li><p>Patient : <%= @appointment.patient.Full_Name %></p></li>
 
                     </ul>
                 </div>
@@ -36,5 +36,3 @@
 </div>
 
 <%= render 'partials/footer' %>
-
-<p id="notice"><%= notice %></p>
