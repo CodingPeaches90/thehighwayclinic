@@ -1,6 +1,5 @@
 class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
-
   # GET /appointments
   # GET /appointments.json
   def index
@@ -74,4 +73,5 @@ class AppointmentsController < ApplicationController
     def appointment_params
       params.require(:appointment).permit(:notes, :date, :patient_id)
     end
+
 end
