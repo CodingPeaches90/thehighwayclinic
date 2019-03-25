@@ -22,7 +22,7 @@
     <% @appointments.each do |appointment| %>
       <tr>
         <td><%= appointment.notes %></td>
-        <td><%= appointment.date %></td>
+        <td><%= MasterDecorator.new(appointment).display_time_for_appointment %></td>
         <td><%= appointment.patient.Full_Name %></td>
         <td><%= link_to 'Show', appointment %></td>
         <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>

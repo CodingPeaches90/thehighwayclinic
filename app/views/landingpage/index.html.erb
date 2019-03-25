@@ -14,13 +14,13 @@
                       <h3> Welcome back Dr <%= current_user.profile.firstname %>!</h3>
                       <!-- We add a conditional here to check if there is any records in the database to prevent an error for the new user -->
                       <% if is_patients_exists? %>
-                        <h6>You recently added the patient:  <b><i><%= last_record %></i></b>, you can view their profile here : <%= link_to 'view', patient_path(last_record_id) %></h6>
+                        <h6>You recently added the patient:  <b><i><%= last_record %></i></b>, you can view their profile here : <%= link_to 'view', patient_path(last_record_id), class:"btn btn-dark btn-m" %></h6>
                       <% else %>
                         <h6> You have no patients, you can add a patient here : <%= link_to 'Add', new_patient_path, class:"btn btn-dark btn-m" %> </h6>
                       <% end %>
                       <!-- Administrator can download all pdf's in the reports folder! -->
                       <% if current_user.admin? %>
-                        <h6> You are an Admin, you can see some analytics here : </h6>
+                        <h6> You are an Admin, you can see some analytics here :<%= link_to 'view', analyticspage_analytics_path, class:"btn btn-dark btn-m" %> </h6>
                       <% end %>
                   </div>
               </div>
@@ -36,7 +36,7 @@
                  <p class="card-text" style="font-size: 14px; text-muted "><i>" <%= tweet.text %> "</i></p>
                </div>
                <div class ="time-tweet" style ="float: right; align-text: right; border-top: 2px solid #38A1F3; ">
-                   <h7 class ="date-tag" style="font-size: 12px; padding-top: 1em;"><%= tweet.created_at.strftime("%B #{tweet.created_at.day.ordinalize}, %Y") %></h7>
+                   <h7 class ="date-tag" style="font-size: 12px; padding-top: 1em;"><%= MasterDecorator.new(tweet).display_time_for_tweet %></h7>
                </div>
              </div>
          <% end %>

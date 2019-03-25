@@ -10,7 +10,7 @@
             <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
                 <div class="container" style="border-bottom:1px solid black">
                     <h2 style="text-align:center;">
-                        Dr <%= @profile.firstname %> <%= @profile.lastname %>
+                        <%= MasterDecorator.new(@profile).concat_first_name_last_name %>
                     </h2>
                 </div>
                 <hr>
@@ -21,7 +21,7 @@
                     <!-- Address -->
                     <li><p><span class="fas fa-map-marker-alt" style="width:50px;"></span>Address : <%= @profile.address %></p></li>
                     <!-- PPS Number -->
-                    <li><p><span class="far fa-id-card" style="width:50px;" title="Tools" ></span>PPS Number : <%= @profile.pps_number %></p></li>
+                    <li><p><span class="far fa-id-card" style="width:50px;" title="Tools" ></span>PPS Number : <%= MasterDecorator.new(@profile).pps_number_to_uppercase %></p></li>
                     <!-- Dental License id -->
                     <li><p><span class="far fa-id-badge" style="width:50px;"></span>Dental License : <%= @profile.dental_license%></p></li>
                     <!-- Number of Patients -->
