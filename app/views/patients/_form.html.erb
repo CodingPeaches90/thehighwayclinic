@@ -6,10 +6,10 @@
   <div class="form-inputs">
     <%= f.input :Full_Name %>
     <%= f.input :Age %>
-    <%= f.input :Sex %>
+    <%= f.input :Sex , :collection => %w[M F]%>
     <%= f.input :Address %>
     <%= f.input :PPS %>
-    <%= f.input :Medical_Card %>
+    <%= f.input :Medical_Card, :collection => %w[YES NO] %>
   </div>
 
   <div class="form-actions">
