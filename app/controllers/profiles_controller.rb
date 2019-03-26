@@ -29,7 +29,10 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
+    # redirect user away from profiles
     @profiles = Profile.all
+    redirect_to root_path
+    flash[:error] = "Restricted Area"
   end
 
   # GET /profiles/1

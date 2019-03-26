@@ -28,13 +28,7 @@
                     <!-- Patient's pps -->
                     <li><p>PPS Number :  <%= @patient.PPS %></p></li>
                     <!-- Patient's medical card status -->
-                    <% if @patient.Medical_Card.to_str.include? "YES" %>
-                        <li><p style = "color: green;">Medical Card Status : <%= @patient.Medical_Card %></p></li>
-                    <% elsif @patient.Medical_Card.to_str.include? "NO"%>
-                        <li><p style = "color: red;">Medical Card Status : <%= @patient.Medical_Card %></p></li>
-                    <% else %>
-                        <li><p>Medical Card Status : <%= @patient.Medical_Card %></p></li>
-                    <% end %>
+                    <%= MasterDecorator.new(@patient.Medical_Card).medical_card_status_show(@patient.Medical_Card) %>
 
                 </ul>
             </div>

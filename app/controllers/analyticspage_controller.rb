@@ -1,9 +1,19 @@
 require 'json'
 
 class AnalyticspageController < ApplicationController
+  before_action :only_admin_access
+
   def analytics
+      only_admin_access
       count_gender
       medical_card_holders
+  end
+
+  # Only admin allowed here
+  def only_admin_access
+      return unless !current_user.admin?
+      redirect_to root_path
+      flash[:error] = "Restricted Area"
   end
 
   # Analtics 1 : Count the number of Females and Male Patients clinic wide
@@ -58,5 +68,4 @@ class AnalyticspageController < ApplicationController
   helper_method :count_gender
   helper_method :count_number_occurences
   helper_method :medical_card_holders
-
 end

@@ -12,3 +12,10 @@ two:
 
 three:
   email: jordanmay@hotdad.com
+
+four:
+  email: mradmintest@admin.com
+  admin: true
+
+five:
+    email: ghy@email.com

@@ -23,3 +23,11 @@ three:
   pps_number: MyString
   dental_license: 1
   user: three
+
+four:
+  firstname: MyString
+  lastname: MyString
+  address: MyString
+  pps_number: MyString
+  dental_license: 1
+  user: five
