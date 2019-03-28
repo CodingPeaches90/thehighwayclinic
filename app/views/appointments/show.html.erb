@@ -19,10 +19,10 @@
                         <!--  Appointment Description -->
                         <li><textarea readonly>Notes : <%= @appointment.notes %></textarea></li>
                         <!-- Appointment Date -->
-                        <li><p>Date : <%= @appointment.date %></p></li>
+                        <li><p>Date : <%= MasterDecorator.new(@appointment).display_time_for_appointment %> </p>
                         <!-- Appointment Dentist -->
-                        <li><p>Dentist : Dr <%= @appointment.user.profile.firstname %> <%= @appointment.user.profile.lastname%></p></li>
-                        <!-- Appointment Patient -->
+                        <li><p>Dentist :<%=  MasterDecorator.new(@appointment.user.profile).concat_first_name_last_name %></p></li>
+                        <!-- Patient full name -->
                         <li><p>Patient : <%= @appointment.patient.Full_Name %></p></li>
 
                     </ul>
